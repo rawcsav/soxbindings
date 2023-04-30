@@ -26,6 +26,8 @@ ext_modules = [
         sorted(['soxbindings/ext/sox.cpp']),
         include_dirs=[
             # Path to pybind11 headers
+            "/usr/local/include",
+            "/usr/local/lib",
             get_pybind_include(),
         ],
         language='c++'
