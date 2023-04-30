@@ -26,14 +26,17 @@ ext_modules = [
         sorted(['soxbindings/ext/sox.cpp']),
         include_dirs=[
             # Path to pybind11 headers
+            get_pybind_include(),
+            "/opt/homebrew/include/",
             "/usr/local/include",
             "/usr/local/lib",
-            get_pybind_include(),
+            get_pybind_include(),],
+        library_dirs=[
+            "/opt/homebrew/lib/",
         ],
         language='c++'
     ),
 ]
-
 
 # cf http://bugs.python.org/issue26689
 def has_flag(compiler, flagname):
